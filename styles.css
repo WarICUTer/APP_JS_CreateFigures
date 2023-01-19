@@ -1,24 +1,39 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #cccc;
-    font-family: 'Oswald',sans-serif;
+    min-width: 600px;
+    background-color: #161616;
 }
 
-h1, h2, h3 {
+* {
+    font-family: 'Oswald',sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: #fff;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+h1, h2, p {
+    margin-top: 10px;
     text-align: center;
 }
 
 h5 {
     margin: 0;
     padding: 9px;
+    width: 100%;
 }
 
 .contenedor-main {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .card {
@@ -28,56 +43,66 @@ h5 {
     justify-content: center;
     text-align: center;
     font-size: 30px;
-    margin: 0px 20px 20px ;
-    background-color: antiquewhite;
+    padding: 18px 28px;
+    margin-bottom: 20px;
+    background-color: #ECDBBA;
     border-color: 2px solid #000;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
-.bg-white {
-    background-color: #fff;
+.bg-blue {
+    background-color: #144272;
 }
 
 .btn {
     width: 120px;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 8px 10px;
     color:#fff;
-    background-color: rgb(65, 128, 255);
+    background-color: #C84B31;
+    border: none;
     border-radius: 20px;
-    margin-bottom: 15px;
     cursor: pointer;
+    transition: background, color, ease-in .5s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
 }
 
 .btn-delete {
-    width: 80px;
-    height: 30px;
-    margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 17px;
+    padding: 7px 14px;
     color: #fff;
     background-color: red;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
+    transition: background, color, ease-in .5s;
 }
 
 .btn-blue {
+    background-color: #C84B31;
     margin-left: 10px;
-    background-color: rgb(65, 128, 255);
-    color: #fff;
+}
+
+.btn-delete:hover {
+    background: #fff;
+    color: #000;
 }
 
 .shape-square {
     width: 90px;
     height: 90px;
     border: 5px solid #000;
-    margin: 20px 60px 10px;
 }
 
 .shape-recta {
-    width: 130px;
-    height: 85px;
+    width: 100px;
+    height: 60px;
+    margin: 18px 0;
     border: 5px solid #000;
-    margin: 20px 40px 10px;
 }
 
 .shape-circle {
@@ -85,33 +110,115 @@ h5 {
     height: 90px;
     border-radius: 50%;
     border: 5px solid #000;
-    margin: 20px 60px 10px;
 }
 
 .shape-trian {
     width: 0;
     height: 0;
-    border-right: 60px solid transparent;
-    border-left: 60px solid transparent;
-    border-bottom: 95px solid #000;
-    margin: 20px 50px 10px;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 90px solid #000;
 }
 
 .result {
     width: 100%;
     font-size: 30px;
-    font-weight: 390px;
-    line-height: 2;
-    margin: 0;
+    margin: 10px 0;
+    color: #fff;
 }
 
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    margin: 30px 80px;
+    justify-content: space-evenly;
+    margin: 0 80px;
     padding: 0 30px;
-    background-color: #fff;
-    min-height: 100px;
-    border-radius: 30px;
+    background-color: #346751;
+    min-height: 50px;
+    border-radius: 15px;
+    text-align: center;
 }
 
+.modal {
+    position: relative;
+}
+
+.options-modal {
+    min-width: 700px;
+    width: 100%;
+    color: #fff;
+    background: #C84B31;
+    box-shadow: 0px 0px 80px -10px #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease-in .5s;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.title-options {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.card-options {
+    max-width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #ECDBBA;
+    color: #000;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-options:hover {
+    background: #fff;
+}
+
+@media (max-width: 618px) {
+    .contenedor {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .options-modal {
+        box-sizing: border-box;
+    }
+
+    .options {
+        width: 100%;
+    }
+
+    .card-options {
+        width: 150px;
+        height: 130px;
+    }
+
+    .card-options h2 {
+        display: none;
+    }
+}
